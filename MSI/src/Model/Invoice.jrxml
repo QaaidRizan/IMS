@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0da447ff-6b93-4b38-b0ec-123a84aed170">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * 
+FROM Invoice
+ORDER BY InvoiceID DESC 
+LIMIT 1;]]>
+	</queryString>
+	<field name="InvoiceID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="InvoiceDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="OrderID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ProductName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Qty" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="5" width="553" height="70" backcolor="#009999" uuid="f4cf5d13-daac-43d5-b14c-6853f1613cbb"/>
+			</rectangle>
+			<image>
+				<reportElement x="484" y="5" width="73" height="70" uuid="49a62cdb-bcdb-4ee2-8a10-bb2b72fbd589"/>
+				<imageExpression><![CDATA["C:\\Users\\USER\\Documents\\NetBeansProjects\\Ims2\\MSI\\src\\Images\\E.M.Sons.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="9" y="51" width="197" height="20" forecolor="#FFFFFF" uuid="d85976dd-b4a3-44ea-a7c4-b8e08e36dab7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="8" y="18" width="236" height="33" forecolor="#FFFFFF" uuid="70d642c6-15d3-4fec-a8a2-0f80fb30f306"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Invoice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="18" width="174" height="55" forecolor="#FFFFFF" uuid="dae1de44-fe18-414e-8596-23d0e7b1adb1"/>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Phone No:0716176703
+Address: 87/A,Old Galle Road, Moratuwa 10400.
+Email:emsonsmotorspvt@gmail.com.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="554" height="61" uuid="93c91849-527c-4cae-9175-afacca9b2985"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="233" splitType="Stretch">
+			<textField>
+				<reportElement x="283" y="150" width="100" height="20" uuid="8e3d9958-bf1c-4177-bdb6-f65280b9ad6a"/>
+				<textFieldExpression><![CDATA[$F{Qty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="144" y="150" width="100" height="20" uuid="73fefe41-ffb8-45f6-9035-54b12b7647bf"/>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="193" width="100" height="20" uuid="438db989-4856-45ce-9788-7134886d1c6a"/>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="119" width="100" height="20" uuid="278ccd9b-373f-49d0-b3f6-347b4acd9a29"/>
+				<textFieldExpression><![CDATA[$F{ProductName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="90" width="100" height="20" uuid="a22a6f63-fcf5-40a8-bbd1-929fec5ddd84"/>
+				<textFieldExpression><![CDATA[$F{OrderID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="145" y="190" width="100" height="20" uuid="25a5427a-4d39-44c4-b03a-6aee1940b1ac"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="117" width="100" height="20" uuid="8ac2f824-7e14-4ea2-954d-00d97a0413da"/>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="88" width="100" height="20" uuid="6997068d-eea4-4686-a4cc-48a21c7bc006"/>
+				<text><![CDATA[Order ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="27" width="100" height="20" uuid="5dd670f4-406f-4ee2-b4a7-8ce1afc27dd9"/>
+				<textFieldExpression><![CDATA[$F{InvoiceID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="59" width="100" height="20" uuid="2d10ed7c-bd41-448a-822f-3b277976eede"/>
+				<textFieldExpression><![CDATA[$F{InvoiceDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="144" y="59" width="100" height="20" uuid="344f0588-7afe-45b0-8d54-e9443bc79e3b"/>
+				<text><![CDATA[Invoice Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="27" width="100" height="20" uuid="4f0f4c0a-dc08-40ed-b867-18fdf3e9d536"/>
+				<text><![CDATA[Invoice ID]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
